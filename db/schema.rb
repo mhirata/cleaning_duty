@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117023913) do
+ActiveRecord::Schema.define(:version => 20111117030117) do
 
   create_table "duties", :force => true do |t|
     t.integer  "type"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(:version => 20111117023913) do
     t.integer  "number"
     t.string   "email"
     t.boolean  "outside"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "weeks", :force => true do |t|
+    t.date     "start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
