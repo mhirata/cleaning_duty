@@ -1,2 +1,19 @@
-<h1>Assignment#index</h1>
-<p>Find me in app/views/assignment/index.html.erb</p>
+<h1>掃除当番管理システムメイン</h1>
+
+<h2>現在の割当</h2>
+
+<table>
+  <th></th>
+  <th><%= @duties[0].name %></th>
+  <th><%= @duties[1].name %></th>
+  <th><%= @duties[2].name %></th>
+  <% @weeks.each do |week| %>
+    <tr>
+      <td><%= week.full_name %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  <% end %>
+</table>
+
