@@ -2,7 +2,7 @@
 
 <h2>現在の割当</h2>
 
-<table>
+<table border="1">
   <th></th>
   <th><%= @duties[0].name %></th>
   <th><%= @duties[1].name %></th>
@@ -10,9 +10,9 @@
   <% @weeks.each do |week| %>
     <tr>
       <td><%= week.full_name %></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><%= week.assignments.where("duty_id = ?",@duties[0].id).first.try(:member).try(:name) %></td>
+      <td><%= week.assignments.where("duty_id = ?",@duties[1].id).first.try(:member).try(:name) %></td>
+      <td><%= week.assignments.where("duty_id = ?",@duties[2].id).first.try(:member).try(:name) %></td>
     </tr>
   <% end %>
 </table>
