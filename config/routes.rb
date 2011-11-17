@@ -1,4 +1,6 @@
 CleaningDuty::Application.routes.draw do
+  get "assignment/index"
+
   resources :members
 
   # The priority is based upon order of creation:
