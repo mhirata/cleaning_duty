@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117030117) do
+ActiveRecord::Schema.define(:version => 20111117034350) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "duty_id"
+    t.integer  "week_id"
+    t.integer  "member_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "duties", :force => true do |t|
     t.integer  "type"
