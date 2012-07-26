@@ -8,7 +8,9 @@ class AssignmentCreator
     weeks_count_to_assign = members.count / duties.count # ここに指定週の残りを引く
     weeks = Week.to_assign(start_week).limit(weeks_count_to_assign)
     
-    # 本当はここで、存在しないWeekを作りたいけど、今回はある前提で。
+    puts duties.count
+    puts weeks_count_to_assign
+    p weeks
 
     weeks.each do |week|
       duties.each do |duty|

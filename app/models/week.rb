@@ -21,4 +21,15 @@ class Week < ActiveRecord::Base
   def cweek
     self.start_date.cweek
   end
+
+  def assign_members(week,duty)
+    self.assignments.where("duty_id = ?",duty.id).map{|a| a.member}
+  end
+
+  def assign_members_name(week,duty)
+    names = ''
+    assign_members(week,duty).each do |member|
+      names << member.name
+    end
+  end
 end

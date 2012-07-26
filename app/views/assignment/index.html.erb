@@ -10,9 +10,9 @@
   <% @weeks.each do |week| %>
     <tr>
       <td><%= week.full_name %></td>
-      <td><%= week.assignments.where("duty_id = ?",@duties[0].id).map{|a| a.try(:member).try(:name)} %></td>
-      <td><%= week.assignments.where("duty_id = ?",@duties[1].id).map{|a| a.try(:member).try(:name)} %></td>
-      <td><%= week.assignments.where("duty_id = ?",@duties[2].id).map{|a| a.try(:member).try(:name)} %></td>
+      <td><%= week.assign_members_name(week,@duties[0]) %></td>
+      <td><%= week.assign_members_name(week,@duties[1]) %></td>
+      <td><%= week.assign_members_name(week,@duties[2]) %></td>
     </tr>
   <% end %>
 </table>
